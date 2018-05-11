@@ -1,0 +1,33 @@
+<!--<div class="padding" [hidden]="false">
+    <p>InitialDate: {{dataInput.StartTime | date: 'mediumTime'}}</p>
+    <p>CurrentDate: {{currentDate | date:'mediumTime'}}</p>
+    <p>TimeGoneInString: {{timeResult}}</p>
+    <p>Task Name: {{dataInput.Issue.IssueName}}</p>
+</div>
+-->
+<!--<table class="testWidth">
+    <tr>
+      <td class="col-md-2">Mark</td>
+      <td class="col-md-3">Otto</td>
+      <td class="col-md-6">@mdo</td>
+    </tr>
+</table>-->
+<div class="testWidth">
+    <div id="iconBox" class="col-md-2 floatLeft borderTest ext-box"><div class="int-box"><i id="iconTest" class="fas fa-play greenColor div.int-box"></i></div></div>
+    <div id="timeBox" class="col-md-5 floatLeft borderTest ext-box"><div class="int-box">{{timeResult}}</div></div>
+    <div id="issueBox" class="col-md-5 floatLeft borderTest ext-box">
+        <div class="int-box"> 
+            <p class="noneMargin">{{dataInput.Issue.Key}}</p>
+            <p id="shortIssue" class="noneMargin">(...)</p>
+            <p id="longIssue" class="noneMargin">{{dataInput.Issue.IssueName}}</p>
+        </div>
+    </div>   
+</div>
+<!-- vartical align middle
+<div class="ext-box">
+    <div class="int-box">
+        <h2>Some txt</h2>
+        <p>bla bla bla</p>
+    </div>
+</div>
+-->
