@@ -7,7 +7,7 @@ import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { DatabaseService } from './services/database.service';
-
+import { ShopDataService } from './services/shop-data.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +22,7 @@ import { FormValidationComponent } from './components/form-validation/form-valid
 import { environment } from '../environments/environment';
 import { ClockComponent } from './components/clock/clock.component';
 import { TestComponentComponent } from './components/test-component/test-component.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TestComponentComponent } from './components/test-component/test-compone
     GalleryComponent,
     FormValidationComponent,
     ClockComponent,
-    TestComponentComponent
+    TestComponentComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,7 @@ import { TestComponentComponent } from './components/test-component/test-compone
       apiKey: 'AIzaSyAuJgMRc84UWwMRlXpmR4ms9CECA3nG6Co'
     })
   ],
-  providers: [DatabaseService, Title],
+  providers: [DatabaseService, Title, ShopDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

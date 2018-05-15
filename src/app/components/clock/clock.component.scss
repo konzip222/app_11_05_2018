@@ -7,14 +7,18 @@
 }
 
 .testWidth{
-    width:50%;
-    height: 100px;
+    width:30%;
+    height: 60px;
  //   vertical-align: middle;
 }
 
 .floatLeft{
   float: left;
   height: 60px;
+}
+
+.marginLeft{
+    margin-left: 40px;
 }
 
 .clearBoth{
@@ -35,10 +39,6 @@
     margin: 0px;
 }
 
-.Visible{
-    visibility: visible;
-}
-
 .Hidden{
     visibility: hidden;    
 }
@@ -48,22 +48,44 @@
     width:  50vw; /* For 100% screen width */
 }
 
-div.ext-box { display: table; width:100%;}
+div.ext-box { display: table;}
 div.int-box { display: table-cell; vertical-align: middle; text-align: center;}
 
+#timeBox{
+    width: 60%;
+}
 
+#iconBox{
+    width: 20%;
+}
+
+#issueBox{
+ //   display: table;
+    float: left;    
+    width: 20%;
+    height: 60px;
+    white-space: nowrap; 
+    overflow: hidden;    
+    text-overflow: ellipsis;
+}
+
+#longIssue{
+    white-space: nowrap; 
+    overflow: hidden;       
+    text-overflow: ellipsis;
+}
+/*
 @media screen and (min-width: 1025px){
     #shortIssue{
         display: none;
     }
 }
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     #longIssue{
         display: none;
     }
 }
-
+*/
 @media screen and (min-width: 425px) and (max-width: 768px) {
     #issueBox{
         display: none;
@@ -74,10 +96,11 @@ div.int-box { display: table-cell; vertical-align: middle; text-align: center;}
     #issueBox{
         display: none;
     }
+   
     #iconBox{
         position: relative;
         left: 35vw;
-        top: 30%;
+        top: 50%;
 //        left:0px;
 //        top:40px;
         z-index: 99;
@@ -92,7 +115,74 @@ div.int-box { display: table-cell; vertical-align: middle; text-align: center;}
         width: 50vw;
         z-index: 98;        
         //display: none;
-    }       
+    }      
+    /*
+    #contBox{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;         
+    }
+
+    #iconBox{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end; 
+    }
+    #timeBox{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end; 
+        //display: none;
+    } */  
 }
 
 // Tooltip
+
+#test{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#smt{
+    margin: 20px;
+    border: 3px;
+    background-color: whitesmoke;
+    height:40px;
+    width: 100px;
+}
+
+#tooltip{
+    background-color: rgb(102, 97, 97);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;    
+    color: whitesmoke;
+    position: absolute;
+    left: 0;
+    top: 0;    
+  //  visibility: hidden;
+}
+
+
+// classes to center stuff
+.parent {
+  display: flex;
+  height: 300px; /* Or whatever */
+  background-color: green;
+}
+
+.child {
+  width: 100px;  /* Or whatever */
+  height: 100px; /* Or whatever */
+  //margin: auto;  /* Magic! */
+  background-color: red;
+}
+
+.parentTest{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 300px; /* Or whatever */
+    background-color: green;    
+}

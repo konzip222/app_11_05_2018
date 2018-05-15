@@ -10,19 +10,30 @@
       <td class="col-md-2">Mark</td>
       <td class="col-md-3">Otto</td>
       <td class="col-md-6">@mdo</td>
-    </tr>
+    </tr> (mouseleave)="hideTooltip()"
 </table>-->
-<div class="testWidth">
-    <div id="iconBox" class="col-md-2 floatLeft borderTest ext-box"><div class="int-box"><i id="iconTest" class="fas fa-play greenColor div.int-box"></i></div></div>
-    <div id="timeBox" class="col-md-5 floatLeft borderTest ext-box"><div class="int-box">{{timeResult}}</div></div>
-    <div id="issueBox" class="col-md-5 floatLeft borderTest ext-box">
-        <div class="int-box"> 
+<div id="contBox" class="testWidth" >
+    <div id="iconBox" class="floatLeft borderTest ext-box"><div class="int-box"><i id="iconTest" class="fas fa-play greenColor"></i></div></div>
+    <div id="timeBox" class=" floatLeft borderTest ext-box"><div class="int-box">{{timeResult}}</div></div>
+    <div id="issueBox" class="borderTest">
+        <div> 
             <p class="noneMargin">{{dataInput.Issue.Key}}</p>
-            <p id="shortIssue" class="noneMargin">(...)</p>
-            <p id="longIssue" class="noneMargin">{{dataInput.Issue.IssueName}}</p>
+         <!--   <p id="shortIssue" class="noneMargin">(...)</p>-->
+            <p id="longIssue" class="noneMargin">{{dataInput.Issue.IssueName}}</p>>
         </div>
-    </div>   
+    </div>
 </div>
+<p id="tooltip" class="Hidden">{{dataInput.Issue.IssueName}}</p>
+<div class="marginLeft" *ngFor="let test of testArray">
+    <p class="noneMargin">{{test}}</p>
+</div>
+<p class="marginLeft">Result1: {{resultSum}}</p>  
+<p class="marginLeft">Result2: {{resultSum2}}</p>  
+<!--
+<div class="parentTest">
+    <div class= "child"></div>
+</div>
+-->
 <!-- vartical align middle
 <div class="ext-box">
     <div class="int-box">
