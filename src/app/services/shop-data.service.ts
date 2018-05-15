@@ -12,4 +12,5 @@ export class ShopDataService {
   changeGoal(goal) {
     this.goals.next(goal)
   }
+
 }

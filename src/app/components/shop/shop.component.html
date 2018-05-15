@@ -3,4 +3,6 @@
   <div *ngFor="let goal of goals">
     <p class="noneMargin">{{goal}}</p>
   </div>
+  <button (click)="addItem()">Add</button>
+  <button (click)="removeItem(2)">Remove</button>  
 </div>
