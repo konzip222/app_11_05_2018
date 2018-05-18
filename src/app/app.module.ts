@@ -16,13 +16,13 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 
 import 'hammerjs'; // <------ mandatory dependency for angular-modal-gallery
 import 'mousetrap'; // <------ mandatory dependency for angular-modal-gallery
-
 import { ModalGalleryModule } from 'angular-modal-gallery';
 import { FormValidationComponent } from './components/form-validation/form-validation.component';
 import { environment } from '../environments/environment';
 import { ClockComponent } from './components/clock/clock.component';
 import { TestComponentComponent } from './components/test-component/test-component.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { BasketComponent } from './components/basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { ShopComponent } from './components/shop/shop.component';
     FormValidationComponent,
     ClockComponent,
     TestComponentComponent,
-    ShopComponent
+    ShopComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

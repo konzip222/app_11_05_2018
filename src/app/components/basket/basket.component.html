@@ -1,0 +1,36 @@
+<div class="marginLeft">
+  <h3>Basket</h3>
+  <p>Test: {{basketProducts | async}}</p>
+  <p>JSON_Test: {{myJSON | async}}</p>
+  <button (click)="getData()">Get data</button>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Cateogry</th>
+      <th>Unit prize</th>
+      <th>Amount</th>
+      <th>Prize</th>
+      <th></th>            
+    </tr>
+    <tr *ngFor="let product of basketProducts | async;index as i">
+      <td>{{product.name}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.prize | number: '.2'}}zł</td>
+      <td>{{product.amount}}</td>
+      <td>{{getPrize(product) | number: '.2'}}zł</td>
+      <td>
+          <!--<i class="fas fa-trash-alt" id="removeIcon" (click)="removeItem(i)"></i>-->
+      </td>            
+    </tr>
+  </table>  
+  <div *ngFor="let prize of prizeArray">
+    <div class="noneMargin">{{prize}}zł</div>
+  </div>
+  <!--<p *ngIf="basketProducts.length==0 | async">basket is empty</p>-->
+  <h6>Prize: {{sumResult | number: '.2'}}zł</h6>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>      
+</div>
