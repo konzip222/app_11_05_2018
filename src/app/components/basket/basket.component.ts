@@ -11,9 +11,11 @@ import { Product } from '../../shared/product.model';
 export class BasketComponent implements OnInit {
 
   public basketProducts : Observable<Product[]>;
+  public prizeSum$ : Observable<number>;
 
   constructor(private _shopDataService: ShopDataService) {
-      this.basketProducts = _shopDataService.basketProducts$.map( productList => productList);    
+      this.basketProducts = _shopDataService.basketProducts$.map( productList => productList);   
+     // this.prizeSum$ = _shopDataService.basketProducts$.map( productList => productList.reduce( (acc) => { acc.amount} ),0);   
    }
 
 //  basketContent = [];
@@ -24,12 +26,7 @@ export class BasketComponent implements OnInit {
   basketContent = [];
 
   ngOnInit() {
-
   //  this._shopDataService.basketProducts$.subscribe(res => this.basketContent = res);
-    /* var myJSON = JSON.stringify(obj);
-    setInterval(() => {
-      this.calculatePrize(this.basketContent);
-    }, 1000);   */ 
   }
 /*
   addItem() {
@@ -43,13 +40,13 @@ export class BasketComponent implements OnInit {
     this.basketContent.splice(i, 1);
     this._shopDataService.changeProduct(this.basketContent);
   }
-
+*/
   calculatePrize(basketCont :Product[]){
     let getPrize = element => element.prize*element.amount;
     let calculateSum = (prev, curr, currIndex) => prev + curr;
-    this.sumResult = this.basketContent.map(getPrize).reduce(calculateSum,0);
+    return this.basketContent.map(getPrize).reduce(calculateSum,0);
   }
-*/
+
   getPrize(product :Product){
     return product.prize*product.amount;
   }

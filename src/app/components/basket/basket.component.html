@@ -26,8 +26,8 @@
   <div *ngFor="let prize of prizeArray">
     <div class="noneMargin">{{prize}}zł</div>
   </div>
-  <!--<p *ngIf="basketProducts.length==0 | async">basket is empty</p>-->
-  <h6>Prize: {{sumResult | number: '.2'}}zł</h6>
+  <!--<p *ngIf="basketProducts.length==0 | async">basket is empty</p> | async          | number: '.2'      -->
+  <h6 *ngIf="basketProducts | async">Prize: {{calculatePrize() | async}}zł</h6>
   <br/>
   <br/>
   <br/>
