@@ -16,7 +16,7 @@
       <td>{{product.prize | number: '.2'}}zł</td>
       <td><input type="number" [(ngModel)] = "product.amount"/></td>
       <td>
-          <button (click)="addItem(i)">Add</button>
+          <button (click)="addItem(product)">Add</button>
       </td>            
     </tr>
   </table>
@@ -25,7 +25,6 @@
   <div *ngFor="let product of discountProducts$ | async;index as i">
     <p class="noneMargin">{{product.name}}</p>
   </div>
-
   <!--
   <div *ngFor="let basketProd  of avaibleProd | async">
     <p>Name: {{basketProd.name}}</p>

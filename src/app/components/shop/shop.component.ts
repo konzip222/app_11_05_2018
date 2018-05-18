@@ -27,6 +27,7 @@ export class ShopComponent implements OnInit, OnDestroy{
   public lastProductName$ : Observable<string>;
   public avaibleProd$ : Observable<Product[]>;
   public discountProducts$: Observable<Product[]>;
+  public basket$: Observable<Product[]>;
 //  public someVar =[];
 //  public 
 
@@ -35,6 +36,7 @@ export class ShopComponent implements OnInit, OnDestroy{
     this.lastProductName$ = _shopDataService.avalibleProducts$.map( productList => productList.reduce( (acc, curr) => curr ).name );
     this.avaibleProd$ = _shopDataService.avalibleProducts$.map( productList => productList);
     this.discountProducts$ = _shopDataService.avalibleProducts$.map( productList => productList.filter(element => element.discount == true));
+    this.basket$ = _shopDataService.basketProducts$.map(productList => productList);
   //  this.someVar = _shopDataService.avalibleProducts$.map( productList => productList);
    // this.cheapProducts$ = _shopDataService.product$.map( productList => productList.filter( product => product.prize > 1.00 ) );
     _shopDataService.avalibleProducts$.map(product => console.log(product));
@@ -50,6 +52,17 @@ export class ShopComponent implements OnInit, OnDestroy{
   async updateData(i){
     await this._shopDataService.update();
   }
+
+/*
+  async getValueFromArray(){
+    let result = "";
+    while(this.tmpTest==""){
+      let obj = this.avaibleProd$[0];
+      result = 
+    }
+    return result;
+  }
+  */
 /*
     apple : Product = {
     name: "apple",
@@ -94,32 +107,14 @@ export class ShopComponent implements OnInit, OnDestroy{
   };  
 
   ngOnInit() {
- //   this._shopDataService.changeProduct(this.basketProducts);    
-//    this._shopDataService.basketProducts$.subscribe(res => this.basketProducts = res);
-  //  this._shopDataService.update();
    setTimeout(() => {
        this._shopDataService.update();
     }, 0);
-  
   }
 
-  addItem(index) {
- //   let tmpProduct = this.products[index]; 
- //   this.basketProducts.push(tmpProduct);
- //   this.goalText += this.itemCount;
- // to dziala
- //   this.basketProducts.push(this.mouse);
-    (async function() {
-      this.tmpTest = this._shopDataService.avalibleProducts$.map( productList => productList);
-      this.testVal = 7;
-    }).bind(this)();
-    this.tmpTest = getProduct(index);
-    this.basketProducts.push(this.tmpTest);
+  addItem(product) {
+    this.basketProducts.push(product);
     this._shopDataService.addProductToBasket(this.basketProducts);
-  //  this._shopDataService.update();
- //   this._shopDataService.changeProduct(this.basketProducts);
- //   this.itemCount = this.basketProducts.length;
-   // this._shopDataService.unsubscribe();    
   }
 
   getData(){

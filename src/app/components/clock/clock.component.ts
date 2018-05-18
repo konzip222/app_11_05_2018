@@ -170,7 +170,7 @@ export class ClockComponent implements OnInit {
     }
 
     let goodFn =  element => {let v = element * element; return v *2;}
-    x.forEach((kuubar, index) => console.log(kuubar));
+   // x.forEach((kuubar, index) => console.log(kuubar));
     let y = x.map( goodFn );
     let sum = x.reduce((prev, curr, currIndex) => currIndex < 2 ? prev + curr : prev, -1);
     x.filter(foo => foo > 2);

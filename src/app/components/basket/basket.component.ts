@@ -22,12 +22,9 @@ export class BasketComponent implements OnInit {
   prizeArray = [];
   sumResult : any;
   basketContent = [];
-  myJSON = JSON.stringify(this.basketContent);
 
   ngOnInit() {
-    setInterval(() => {
-      this.myJSON = JSON.stringify(this.basketContent);
-    }, 1000);
+
   //  this._shopDataService.basketProducts$.subscribe(res => this.basketContent = res);
     /* var myJSON = JSON.stringify(obj);
     setInterval(() => {
